@@ -17,7 +17,11 @@ window.onload=function(){
 	// context.lineJoin="round";圆角
 	context.miterLimit=50;
 	
-	drawStar(context,40,300,400,400,a);
+	context.shadowColor="#058";
+	context.shadowOffsetX=10;
+	context.shadowOffsetY=10;
+	context.shadowBlur=5;
+	drawStar(context,150,300,400,400,0);
 		
 };
 
@@ -29,6 +33,13 @@ function drawStar(ctx,r,R,x,y,rot){
 		ctx.lineTo(Math.cos((54+i*72-rot)/180*Math.PI)*r+x,-Math.sin((54+i*72-rot)/180*Math.PI)*r+y);
 	}
 	ctx.closePath();
+	ctx.fillStyle="#fb3";
+	ctx.strokeStyle="#fd5";
+	ctx.lineWidth=3;
+	ctx.lineJoin="round";
+
+	ctx.fill();
+	
 	ctx.stroke();
 
 }
